@@ -25,15 +25,7 @@ terraform {
   region = "ap-south-1"
 }
 }
-resource "aws_key_pair" "my_key_pair" {
-  key_name   = "my-generated-key"
-  public_key = tls_private_key.my_key.public_key_openssh
-}
 
-resource "tls_private_key" "my_key" {
-  algorithm = "RSA"
-  rsa_bits  = 4096
-}
 resource "aws_security_group" "allow_sg" {
   ingress {
     from_port = 22
@@ -57,7 +49,7 @@ module "ec2-instance" {
     Name:"newEc2"
   }
   vpc_security_group_ids = [aws_security_group.allow_sg.id]
-  key_name = "newKeyPair"
+
 }
 
 #data"aws_instance" "my_ec2" {
