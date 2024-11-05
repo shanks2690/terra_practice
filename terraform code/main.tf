@@ -18,13 +18,13 @@ provider "aws" {
   secret_key = var.aws_secret_access_key
 }
 
-#terraform {
-#  backend "s3" {
-#  bucket = "mybackendbucket"
-#  key    = "practice/terraform.tfstate"
-#  region = "ap-south-1"
-#}
-#}
+terraform {
+  backend "s3" {
+  bucket = "mybackendbucket"
+  key    = "practice/terraform.tfstate"
+  region = "ap-south-1"
+}
+}
 
 resource "aws_security_group" "allow_sg" {
   ingress {
