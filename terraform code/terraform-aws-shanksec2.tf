@@ -10,7 +10,6 @@ terraform {
   }
   backend "remote" {
     organization = "Shanks_practice"
-
     workspaces {
       name = "terra_practice"
     }
