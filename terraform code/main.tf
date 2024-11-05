@@ -46,6 +46,7 @@ cidr_blocks = ["0.0.0.0/0"]
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
 module "ec2-instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "5.7.1"
